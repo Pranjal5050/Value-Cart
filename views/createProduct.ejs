@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Create - Product</title>
+</head>
+
+<body>
+    <main class="w-full h-screen p-5 flex items-center justify-center">
+        <div class="w-[80%] shadow-2xl p-5">
+            <h1 class="text-2xl">Create Product</h1>
+            <form action="/product/createproduct" method="post" enctype="multipart/form-data">
+                <div class="flex gap-2 items-center mt-5">
+                    <h2>Upload Image</h2>
+                    <label>
+                        <input name="image" type="file" hidden />
+                        <div
+                            class="flex w-28 h-9 px-2 flex-col bg-indigo-600 rounded-full shadow text-white text-xs font-semibold leading-4 items-center justify-center cursor-pointer focus:outline-none">
+                            Choose File</div>
+                    </label>
+                </div>
+                <input type="text" name="name" class=" outline-none py-[5px] px-1 w-[45%]  border-1 rounded-md mt-5"
+                    placeholder="Product Name">
+                <input type="text" name="type" class=" outline-none py-[5px] px-1 w-[45%]  border-1 rounded-md mt-5"
+                    placeholder="Product Type">
+                <input type="text" name="price" class=" outline-none py-[5px] px-1 w-[45%]  border-1 rounded-md mt-5"
+                    placeholder="Product Price">
+                <input type="text" name="discount" class=" outline-none py-[5px] px-1 w-[45%]  border-1 rounded-md mt-5"
+                    placeholder="Dicount">
+                <h1 class="text-[20px] mt-2">Product Details</h1>
+                <input type="text" name="length"
+                    class=" outline-none py-[5px] px-1 w-[45%]  border-1 rounded-md mt-5" placeholder="Product Length">
+                <input type="text" name="height" class=" outline-none py-[5px] px-1 w-[45%]  border-1 rounded-md mt-5"
+                    placeholder="Product height">
+                <input type="text" name="quantity"
+                    class=" outline-none py-[5px] px-1 w-[45%]  border-1 rounded-md mt-5 block mb-5"
+                    placeholder="Product quantity">
+                <button
+                    class="py-2 px-8 hover:bg-blue-700 bg-blue-600 text-white font-semibold rounded-2xl cursor-pointer">Submit</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

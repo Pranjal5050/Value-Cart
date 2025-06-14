@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="w-full h-screen p-5">
+        <%- include('partials/header') %>
+            <form action="/users/edit/<%= user._id %>" method="post">
+                <div class="w-full py-2 mt-5 flex">
+                    <div class="w-1/2">
+                        <h1>Full Name</h1>
+
+                        <input type="text" name="fullname" value="<%= user.fullname %>"
+                            class="w-[80%] outline-none px-1 py-[4px] bg-zinc-200 rounded shadow-2xl">
+                    </div>
+                    <div class="w-1/2">
+                        <h1>Email</h1>
+                        <input type="email" name="email" value="<%= user.email %>"
+                            class="w-[80%] outline-none px-1 py-[4px] bg-zinc-200 rounded shadow-2xl">
+                    </div>
+                </div>
+
+                <button
+                    class="py-2 px-8 bg-yellow-500 text-white rounded mt-5 cursor-pointer hover:bg-yellow-600 font-bold">Update
+                </button>
+            </form>
+
+    </main>
+</body>
+
+</html>

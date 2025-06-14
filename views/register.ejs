@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="w-full h-screen p-10 relative">
+        <% if(error.length > 0){%>
+          <div class="absolute top-0 left-[40%]">
+            <p class="bg-red-500 font-bold text-white px-2 py-2 text-center rounded-md"><%= error %></p>
+          </div>
+        <%} %>
+        <%- include('partials/header') %>
+        
+            <div class="flex gap-5 mt-10">
+                <div class="w-1/2 h-full shadow-xl rounded-2xl p-5">
+                    <div class="mt-5">
+                        <form action="/users/register" method="post">
+                            <h1 class="text-2xl ">Create an account</h1>
+                            <p class="text-[15px] mt-5 w-92">Lorem ipsum dolor sit amet <span
+                                    class="text-green-600">consectetur adipisicing elit.</span> Quis, fugiat.</p>
+                            <input type="text" required name="fullname"
+                                class="block w-[90%] border-1 outline-none py-1 px-1 rounded-md mt-5" placeholder="Enter FullName">
+                            <input type="email" required name="email"
+                                class="block w-[90%] border-1 outline-none py-1 px-1 rounded-md mt-5" placeholder="Enter Email">
+                            <input type="password" required name="password"
+                                class="block w-[90%] border-1 outline-none py-1 px-1 rounded-md mt-5 mb-5"
+                                placeholder="Enter Password">
+                            <button
+                                class="py-2 w-[20%] cursor-pointer hover:bg-blue-700 bg-blue-600 text-white rounded-md border-none">Register</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="w-1/2 h-full shadow-md rounded-2xl p-5">
+                    <div class="mt-5">
+                        <h1 class="text-2xl ">Welcome back</h1>
+                        <p class="text-[15px] mt-5 w-92">Lorem ipsum dolor sit amet <span
+                                class="text-green-600">consectetur adipisicing elit.</span> Quis, fugiat.</p>
+                        <form action="/users/login" method="post">
+                            <input type="email" required name="email"
+                                class="block w-[90%] border-1 py-1 px-1 rounded-md mt-5" placeholder="Enter Email">
+                            <input type="password" required name="password"
+                                class="block w-[90%] border-1 py-1 px-1 rounded-md mt-5 mb-5"
+                                placeholder="Enter Password">
+                            <button
+                                class="py-2 w-[20%] cursor-pointer hover:bg-blue-700 bg-blue-600 text-white rounded-md border-none">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+
+</html>

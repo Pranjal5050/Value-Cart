@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="w-full py-2  p-3">
+        <%- include('partials/header') %>
+            <div class="w-full py-2 flex gap-2">
+                <div class="w-1/2 h-[40vw] overflow-hidden shadow-2xl rounded-2xl">
+                    <div class="w-full h-[80%] flex items-center justify-center">
+                        <img class="w-[60%] h-full"
+                            src="data:image/jpeg;base64,<%= productdet.image.toString('base64') %>" alt="">
+                    </div>
+                    <div class="mt-5 flex items-center justify-center gap-5 p-2">
+                        <a href="/cart/<%= productdet._id %>"><button class="py-2 px-8 cursor-pointer text-[15px] rounded-md border-[#9F2089] border-1 font-bold text-[#9F20AB]"><i class="ri-shopping-cart-line"></i>Add to
+                            Cart </button></a>
+                        <button class="bg-[#9F2089] text-[#FFFFFF] py-2 px-8 text-[15px] rounded-md border-1 cursor-pointer"><i class="ri-handbag-fill"></i> Buy Now</button>
+                    </div>
+                </div>
+
+                <div class="w-1/2 py-2">
+                    <div class="p-2  rounded-md shadow-xl">
+                        <h1 class="text-[20px] text-zinc-500"><%= productdet.name %>
+                        </h1>
+                        <h1 class="text-2xl mt-2">₹ <%= productdet.price %>
+                        </h1>
+                        <i class="ri-star-fill text-orange-600"></i>
+                        <i class="ri-star-fill text-orange-600"></i>
+                        <i class="ri-star-fill text-orange-600"></i>
+                        <i class="ri-star-fill text-orange-600"></i>
+                        <i class="ri-star-half-fill text-orange-600"></i>
+                        <h1 class="text-zinc-600 text-[15px] mt-2">Free Delivery
+                        </h1>
+                    </div>
+                    <div class="shadow-xl mt-6 p-2">
+                        <h1>Select Size</h1>
+                        <button class="py-1 mt-4 px-5 rounded-full bg-[#FFE7FB] text-[#9F2089] font-bold">Free
+                            Size</button>
+                    </div>
+                    <div class="shadow-xl mt-6 p-2">
+                        <h1 class="text-2xl">Product Details</h1>
+                        <h1 class="mt-2 text-zinc-600">Name : <%= productdet.name %>
+                        </h1>
+                        <h1 class="text-zinc-600">Type : <%= productdet.type %>
+                        </h1>
+                        <h1 class="text-zinc-600">Pattern : Printed</h1>
+                        <h1 class="text-zinc-600">Product Length : <%= productdet.length %></h1>
+                        <h1 class="text-zinc-600">Product Height : <%= productdet.height %></h1>
+                        <h1 class="text-zinc-600">Net Quantity (N) : <%= productdet.quantity %></h1>
+                        <h1 class="text-zinc-600 mt-5">Country of Origin : India</h1>
+
+                    </div>
+                </div>
+
+            </div>
+            <%- include('partials/footer') %>
+    </main>
+</body>
+
+</html>

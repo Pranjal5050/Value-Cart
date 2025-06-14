@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="w-full h-screen p-5">
+        <%- include('partials/header')%>
+            <div class="mt-5 flex gap-4 flex-wrap">
+                <% user.cart.forEach((item)=>{%>
+                    <div class="w-62 shadow-xl rounded overflow-hidden">
+                        <img src="data:image/jpeg;base64,<%= item.image.toString('base64') %>"
+                            class="w-full h-[22vw]  object-cover" alt="">
+                        <div class="w-full p-2">
+                            <h1 class="text-[17px] text-zinc-700">
+                                <%= item.name.substring(0, 22) %>..
+                            </h1>
+                            <h2 class="text-[17px] mt-1">₹<%= item.price %></h2>
+                            <h2 class="text-[15px] mt-1 text-zinc-600">Qty : <%= item.quantity %></h2>
+                            <a href="/cart/remove/<%=item._id %>"><h1 class="text-[16px] text-zinc-500 mt-2"><i class="ri-close-large-fill"></i> REMOVE</h1></a>
+                        </div>
+                    </div>
+                <%})%>
+            </div>
+            <div class="w-full h-72 shadow-2xl mt-5 p-5">
+                <h1 class="text-2xl">Price Breakdown</h1>
+                <div class="w-[40%] py-2 p-5">
+                    <div class="w-full flex items-center justify-between mt-2">
+                        <h1>Total Amount</h1>
+                        <h1>₹<%= price %>
+                        </h1>
+                    </div>
+                    <div class="w-full flex items-center justify-between mt-2">
+                        <h1>Discount on MRP</h1>
+                        <h1>- ₹ <%=discount %>
+                        </h1>
+                    </div>
+
+                    <div class="w-full flex items-center justify-between mt-2">
+                        <h1>Shipping Fee</h1>
+                        <h1>FREE</h1>
+                    </div>
+                </div>
+                <hr>
+                <div class="flex items-center justify-between w-[40%] mt-5">
+                    <h1 class="font-bold">Total Amount</h1>
+                    <h1 class="text-green-600">₹<%= bill %>
+                    </h1>
+                </div>
+            </div>
+
+    </main>
+</body>
+
+</html>

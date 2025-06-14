@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'text';
+            src: url('/font/Lato-BlackItalic.ttf');
+        }
+        @font-face {
+            font-family: 'text2';
+            src: url('/font/Oswald-Bold.ttf');
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="w-full flex items-center justify-between p-5">
+        <h1 class="text-[25px] font-[text]" >Value Cart</h1>
+        <% var loggedin = typeof loggedin !== "undefined" ? loggedin : true %>
+            <% if(loggedin){ %>
+            <div class="nright flex gap-2">
+                <h2 class="font-[text2] text-[18px]"><a href="/shop">Home</a></h2>
+                <h2 class="font-[text2] text-[18px]"><a href="/users/profile">Profile</a></h2>
+                <h2 class="font-[text2] text-[18px]"><a href="/query/contact">Contact</a></h2>
+                <h2 class="font-[text2] text-[18px]"><a href="/cart">Cart</a></h2>
+                <h2 class="font-[text2] text-[18px]"><a href="/users/logout" class="text-red-600">Logout</a></h2>
+            
+            </div>
+            <%} %>
+    </nav>
